@@ -44,4 +44,9 @@ public class LeavePeriodService {
         lpr.save(lp);
         return new ResponseEntity<>("Leave Period Updated Successufully...", HttpStatus.CREATED);
     }
+
+    public ResponseEntity<String> funDeleteById(int id) {
+        lpr.deleteById(id);
+        return new ResponseEntity<>("Deleted Succesfully by id "+id,HttpStatus.OK);
+    }
 }

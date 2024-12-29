@@ -6,20 +6,20 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Date;
-
+import java.time.LocalDate;
 //@Builder
 @Entity
 //@Data
 //@NoArgsConstructor
 //@AllArgsConstructor
+@Table(schema = "admin")
 public class LeavePeriod {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int leavePeriodId;
     private String leavePeriodName;
-    private Date fromDate;
-    private Date toDate;
+    private LocalDate fromLocalDate;
+    private LocalDate toLocalDate;
     //@Builder.Default
     private int activeStatus=0;
 
@@ -39,20 +39,20 @@ public class LeavePeriod {
         this.leavePeriodName = leavePeriodName;
     }
 
-    public Date getFromDate() {
-        return fromDate;
+    public LocalDate getFromDate() {
+        return fromLocalDate;
     }
 
-    public void setFromDate(Date fromDate) {
-        this.fromDate = fromDate;
+    public void setFromDate(LocalDate fromLocalDate) {
+        this.fromLocalDate = fromLocalDate;
     }
 
-    public Date getToDate() {
-        return toDate;
+    public LocalDate getToDate() {
+        return toLocalDate;
     }
 
-    public void setToDate(Date toDate) {
-        this.toDate = toDate;
+    public void setToDate(LocalDate toLocalDate) {
+        this.toLocalDate = toLocalDate;
     }
 
     public int getActiveStatus() {
@@ -68,8 +68,8 @@ public class LeavePeriod {
         return "LeavePeriod{" +
                 "leavePeriodId=" + leavePeriodId +
                 ", leavePeriodName='" + leavePeriodName + '\'' +
-                ", fromDate=" + fromDate +
-                ", toDate=" + toDate +
+                ", fromLocalDate=" + fromLocalDate +
+                ", toLocalDate=" + toLocalDate +
                 ", activeStatus=" + activeStatus +
                 '}';
     }

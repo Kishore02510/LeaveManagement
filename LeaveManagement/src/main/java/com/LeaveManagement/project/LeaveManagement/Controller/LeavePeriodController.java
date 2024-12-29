@@ -37,7 +37,12 @@ public class LeavePeriodController {
         return lps.funDelete();
     }
 
-    @PutMapping("/uodateById/{id}")
+    @DeleteMapping("/deleteById/{id}")
+    public ResponseEntity<String> funDeleteById(@PathVariable int id){
+        return lps.funDeleteById(id);
+    }
+
+    @PutMapping("/updateById/{id}")
     public ResponseEntity<String> funUpdate(@PathVariable("id") int id,@RequestBody LeavePeriod leavePeriod){
         return lps.funUpdate(id, leavePeriod);
     }
