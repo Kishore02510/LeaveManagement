@@ -8,6 +8,7 @@ import javax.xml.validation.Schema;
 @Table(schema = "admin")
 @Entity
 public class LeaveType {
+
     public int getLeaveTypeId() {
         return leaveTypeId;
     }

@@ -23,9 +23,11 @@ public class LeavePeriod {
     //@Builder.Default
     private int activeStatus=0;
 
-    public int getLeavePeriodId() {
-        return leavePeriodId;
+    public LeavePeriod() {
     }
+
+
+    public int getLeavePeriodId() {return leavePeriodId;}
 
     public void setLeavePeriodId(int leavePeriodId) {
         this.leavePeriodId = leavePeriodId;
