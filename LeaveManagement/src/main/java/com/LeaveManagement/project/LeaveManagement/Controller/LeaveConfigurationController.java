@@ -29,9 +29,10 @@ public class LeaveConfigurationController {
 
     @PostMapping("/saveLeaveConfiguration")
     public ResponseEntity<String> addLeaveConfiguration(@RequestBody LeaveConfigurationDto leaveConfigDto) {
+        System.out.println(leaveConfigDto);
 
-        LeavePeriod leavePeriod = lpr.findById(leaveConfigDto.getLeavePeriodId()).orElseThrow();
-        LeaveType leaveTyp = ltr.findById(leaveConfigDto.getLeaveTypeId()).orElseThrow();
+        LeavePeriod leavePeriod = lpr.findById(leaveConfigDto.getLeavePeriodId()).orElseThrow(() ->new RuntimeException("LeavePeriod not found with ID " + leaveConfigDto.getLeaveTypeId()));
+        LeaveType leaveTyp = ltr.findById(leaveConfigDto.getLeaveTypeId()).orElseThrow(() ->new RuntimeException("LeaveType not found with ID " + leaveConfigDto.getLeaveTypeId()));
 
         LeaveConfigurationEntity lce = new LeaveConfigurationEntity();
         lce.setLeavePeriodId(leavePeriod);

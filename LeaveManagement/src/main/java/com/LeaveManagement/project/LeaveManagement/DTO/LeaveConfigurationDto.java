@@ -5,20 +5,15 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.Date;
 
 public class LeaveConfigurationDto {
-    @JsonIgnore
     private int leaveConfigId;
-    @JsonIgnore
     private int leavePeriodId;
-    @JsonIgnore
     private int leaveTypeId;
 
-    @JsonIgnore
     private int officeId = 1;
-    @JsonIgnore
+
     private int leaveCount;
-    @JsonIgnore
     private int activeStatus = 0;
-    @JsonIgnore
+
     private int leavePerReq;
 
 
@@ -29,7 +24,6 @@ public class LeaveConfigurationDto {
     public void setLeavePeriodId(int leavePeriodId) {
         this.leavePeriodId = leavePeriodId;
     }
-
     public int getLeaveTypeId() {
         return leaveTypeId;
     }
@@ -57,7 +51,6 @@ public class LeaveConfigurationDto {
     public void setLeaveCount(int leaveCount) {
         this.leaveCount = leaveCount;
     }
-
     public int getActiveStatus() {
         return activeStatus;
     }
@@ -65,7 +58,6 @@ public class LeaveConfigurationDto {
     public void setActiveStatus(int activeStatus) {
         this.activeStatus = activeStatus;
     }
-
     public int getLeavePerReq() {
         return leavePerReq;
     }
@@ -146,6 +138,16 @@ public class LeaveConfigurationDto {
         this.leavePeriodName = leavePeriodName;
         this.leaveTypeDescription = leaveTypeDescription;
         this.leaveTypeShort = leaveTypeShort;
+    }
+
+    public LeaveConfigurationDto(int leaveConfigId, int leavePeriodId, int leaveTypeId, int officeId, int leaveCount, int activeStatus, int leavePerReq) {
+        this.leaveConfigId = leaveConfigId;
+        this.leavePeriodId = leavePeriodId;
+        this.leaveTypeId = leaveTypeId;
+        this.officeId = officeId;
+        this.leaveCount = leaveCount;
+        this.activeStatus = activeStatus;
+        this.leavePerReq = leavePerReq;
     }
 
 }

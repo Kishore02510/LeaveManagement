@@ -11,11 +11,11 @@ public class LeaveConfigurationEntity {
     private int leaveConfigId;
 
     @ManyToOne
-    @JoinColumn(name = "leavePeriodId")
+    @JoinColumn(name = "leavePeriodId",unique = false)
     private LeavePeriod leavePeriodId;
 
     @ManyToOne
-    @JoinColumn(name = "leaveTypeId")
+    @JoinColumn(name = "leaveTypeId",unique = false)
     private LeaveType leaveTypeId;
 
     private int officeId = 1;
